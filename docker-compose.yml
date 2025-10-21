@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  netflix-analysis:
+    build: .
+    volumes:
+      - .:/app          # ← весь код и данные с хоста → в /app контейнера
+      - ./plots:/app/plots   # ← графики сохраняются на хост
+    environment:
+      - PYTHONUNBUFFERED=1
